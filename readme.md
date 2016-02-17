@@ -6,12 +6,6 @@ Ctable is a PHP class for generating HTML tables out of data in arrays. It was c
 
 It is intended to be used with [Anax MVC](https://github.com/mosbth/Anax-MVC).
 
-## License
-----------------------------------
-
-This software is free software and carries a MIT license.
-
-
 ## How to use
 
 ### How to create a table
@@ -49,3 +43,39 @@ Finally, in order to actually render the table, you must use the object's View()
         'content' => $table->View(),
         'title' => "Demonstration of tables in HTML"
     ]);
+
+### Optional elements
+
+There is a number of optional elements that you might want to add to your table.
+
+
+**Footer** content can be defined before creating the object. Then, you feed it to the object, just like you did with the `$data` and `$headers` variables:
+
+    $footer = array(
+        "Footer 1", "Footer 2", "Footer 3", "Footer 4",
+        );
+
+You can also define it after creating the object:
+    
+    $table->setFooters(["Footer 1", "Footer 2", "Footer 3", "Footer 4"]);
+
+**Table caption** (the `<caption>` tag) can also be created in two ways:
+
+    $caption = "Example data";
+
+    $table->setCaption("Example data");
+
+**CSS classes and ID** can be added to the `<table>` tag. Those can also be created in two ways:
+
+    $classes = array(
+        "someClass",
+        "anotherClass",
+        );
+    $id = "table01";
+
+    $table->setClass(["someClass", "anotherClass"]);
+    $table->setID("table01");
+
+## License
+
+This software is free software and carries a MIT license.

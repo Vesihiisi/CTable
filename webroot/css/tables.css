@@ -1,0 +1,30 @@
+/* TABLES */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid silver;
+}
+
+th,
+td {
+    padding: 0.5em;
+    text-align: left;
+}
+
+tbody {
+    font-size: 0.8em;
+}
+
+thead {
+    background-color: #C60099;
+    color: white;
+    font-weight: bold;
+}
+
+tfoot {
+    background-color: #D1D1D1;
+}

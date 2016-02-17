@@ -2,7 +2,7 @@
 
 
 
-use Vesihiisi\Ctable\Ctable;
+use Vesihiisi\CTable;
 
 class CTableTest extends PHPUnit_Framework_TestCase
 {
@@ -23,7 +23,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableBasic()
     {
         $expectedResult = "<table><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         ]);
@@ -34,7 +34,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableNoHeadersGiven()
     {
         $expectedResult = "<table><thead><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr></thead><tbody><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data
         ]);
         $result = $table->View();
@@ -44,7 +44,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableWithClasses()
     {
         $expectedResult = "<table class = 'someClass anotherClass'><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         'class' => array(
@@ -59,7 +59,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableWithId()
     {
         $expectedResult = "<table id = 'table01'><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         'id' => "table01",
@@ -71,7 +71,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableWithClassesAndId()
     {
         $expectedResult = "<table class = 'someClass anotherClass' id = 'table01'><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         'class' => array(
@@ -86,7 +86,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableWithCaption()
     {
         $expectedResult = "<table><caption>Important data</caption><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         'caption' => "Important data",
@@ -98,7 +98,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testGenerateTableWithFooter()
     {
         $expectedResult = "<table><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr></tbody><tfoot><tr><td>Footer 1</td><td>Footer 2</td><td>Footer 3</td><td>Footer 4</td></tr></tfoot></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         'footers' => $this->footers,
@@ -110,7 +110,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     public function testAddNewRow()
     {
         $expectedResult = "<table><thead><tr><td>Header 1</td><td>Header 2</td><td>Header 3</td><td>Header 4</td></tr></thead><tbody><tr><td>Row 1 value 1</td><td>Row 1 value 2</td><td>Row 1 value 3</td><td>Row 1 value 4</td></tr><tr><td>Row 2 value 1</td><td>Row 2 value 2</td><td>Row 2 value 3</td><td>Row 2 value 4</td></tr><tr><td>Row 3 value 1</td><td>Row 3 value 2</td><td>Row 3 value 3</td><td>Row 3 value 4</td></tr></tbody></table>";
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         ]);
@@ -123,7 +123,7 @@ class CTableTest extends PHPUnit_Framework_TestCase
     {
         $expectedResult = 2;
 
-        $table = new CTable([
+        $table = new \Vesihiisi\CTable\CTable([
         'rows' => $this->data,
         'headers' => $this->headers,
         ]);

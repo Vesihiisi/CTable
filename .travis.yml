@@ -3,13 +3,6 @@ php:
     - 5.5
     - 5.4
     - hhvm
-
-before_script:
-    - wget https://scrutinizer-ci.com/ocular.phar
-
-script:
-    - composer install
-    - phpunit --bootstrap test/bootstrap.php --coverage-clover coverage.clover test
-
-after_script:
-    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+ 
+script: 
+    - phpunit --bootstrap test/bootstrap.php test

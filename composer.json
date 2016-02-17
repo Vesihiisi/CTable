@@ -1,0 +1,12 @@
+{
+    "name": "vesihiisi/ctable",
+    "description": "A generator of HTML tables",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alicia Fagerving",
+            "email": "alicia@fagerving.se"
+        }
+    ],
+    "require": {}
+}

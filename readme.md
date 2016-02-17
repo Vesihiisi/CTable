@@ -21,6 +21,7 @@ If you're using Anax-MVC, you can use the example files included in this reposit
 
 ### How to create a table
 
+
 The data that you want to display in a table should be an array of arrays. Each inside array corresponds to one table row. Together, all the rows are collected in an outside array:
 
     $rows = array(

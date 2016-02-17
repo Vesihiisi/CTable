@@ -102,6 +102,9 @@ class Ctable
     private function openTable()
     {
         $addons = array();
+        if (count($this->class) == 0 && empty($this->id)) {
+            return "<table>";
+        }
         if (count($this->class) > 0) {
             $classes = implode(" ", $this->class);
             $addons[] = "class = '$classes'";

@@ -4,7 +4,18 @@
 
 Ctable is a PHP class for generating HTML tables out of data in arrays. It was created as part of the course DV1486 Databased Web Applications with PHP and MVC framework at Blekinge Institute of Technology, Sweden.
 
-It is intended to be used with [Anax MVC](https://github.com/mosbth/Anax-MVC).
+It is intended to be used with [Anax MVC](https://github.com/mosbth/Anax-MVC), but is not dependent on it. It can be included in any other project.
+
+## How to install
+
+To install CTable from Packagist, put this line in your `composer.json` file:
+    
+    "require": {
+        ...
+        "vesihiisi/ctable": "dev-master"
+    }
+
+If you're using Anax-MVC, you can use the example files included in this repository to test how CTable works with the framework. Put the pagecontroller `webroot/tables.php` and the stylesheet `css/tables.css` in your own webroot directory and point your browser to the controller.
 
 ## How to use
 

@@ -10,7 +10,6 @@ namespace Vesihiisi\Ctable;
 
 class Ctable
 {
-    private $html;
     private $headers;
     private $footers;
     private $rows;

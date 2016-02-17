@@ -91,3 +91,5 @@ You can also define it after creating the object:
 ## License
 
 This software is free software and carries a MIT license.
+
+[![Build Status](https://travis-ci.org/Vesihiisi/CTable.svg?branch=master)](https://travis-ci.org/Vesihiisi/CTable)

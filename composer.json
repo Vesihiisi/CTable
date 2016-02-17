@@ -8,5 +8,11 @@
             "email": "alicia@fagerving.se"
         }
     ],
-    "require": {}
+	
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-4": { "Vesihiisi\\": "src/" }
+    }
 }
